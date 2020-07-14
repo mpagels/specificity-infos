@@ -15,7 +15,7 @@ body {
     display: grid;
     grid-template-columns: 23% 2% 23% 2% 23% 2% 23%;
     grid-template-rows: 80px 160px;
-    border: ;
+    
 }
 
 .grid-1 .title {
