@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Selektor-Spezifität</title>
+  </head>
+  <body>
+    <main>
+      <div class="flex-1">
+        <div class="grid-1">
+          <div class="title">style-<br />Attribute</div>
+          <div class="title">ID</div>
+          <div class="title">Klasse,<br />Pseudoklasse,<br />Attribute</div>
+          <div class="">Elemente-<br />Pseudoelemente</div>
+          <div class="buchstabe">A</div>
+          <div>,</div>
+          <div class="buchstabe">B</div>
+          <div>,</div>
+          <div class="buchstabe">C</div>
+          <div>,</div>
+          <div class="buchstabe">D</div>
+        </div>
+
+        <div>
+          -------------------------------------------------------------------------------------------------------------------------------------&gt
+        </div>
+
+        <div class="flex-2">
+          <div>höchste<br />Gewichtung</div>
+          <div>niedrigste<br />Gewichtung</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>Selektoren</div>
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>Spezifität</div>
+        <div>Beschreibung</div>
+
+        <div>* {...}</div>
+        <div>0</div>
+        <div>0</div>
+        <div>0</div>
+        <div>0</div>
+        <div>0,0,0,0</div>
+        <div>1 Universalselektor</div>
+
+        <div>p {...}</div>
+        <div>0</div>
+        <div>0</div>
+        <div>0</div>
+        <div>1</div>
+        <div>0,0,0,1</div>
+        <div>1 Typselektor</div>
+
+        <div>ol li {...}</div>
+        <div>0</div>
+        <div>0</div>
+        <div>0</div>
+        <div>2</div>
+        <div>0,0,0,2</div>
+        <div>2 Typselektor</div>
+
+        <div>.hinweis {...}</div>
+        <div>0</div>
+        <div>0</div>
+        <div>1</div>
+        <div>0</div>
+        <div>0,0,1,0</div>
+        <div>1 Klassenselektor</div>
+
+        <div>*.hinweis {...}</div>
+        <div>0</div>
+        <div>0</div>
+        <div>1</div>
+        <div>0</div>
+        <div>0,0,1,0</div>
+        <div>1 Universalselektor<br />1 Klassenselektor</div>
+
+        <div>*[type=checkbox] {...}</div>
+        <div>0</div>
+        <div>0</div>
+        <div>1</div>
+        <div>0</div>
+        <div>0,0,1,0</div>
+        <div>1 Universalselektor<br />1 Attributselektor</div>
+
+        <div>p:first-child {...}</div>
+        <div>0</div>
+        <div>0</div>
+        <div>1</div>
+        <div>1</div>
+        <div>0,0,1,1</div>
+        <div>1 Pseudoklasse<br />1 Typselektor</div>
+
+        <div>ul li.info {...}</div>
+        <div>0</div>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+        <div>0,0,1,2</div>
+        <div>2 Typselektor<br />1 Klassenselektor</div>
+
+        <div>#inhalt {...}</div>
+        <div>0</div>
+        <div>1</div>
+        <div>0</div>
+        <div>0</div>
+        <div>0,1,0,0</div>
+        <div>1 ID-Selektor</div>
+
+        <div>#inhalt p {...}</div>
+        <div>0</div>
+        <div>1</div>
+        <div>0</div>
+        <div>1</div>
+        <div>0,1,0,1</div>
+        <div>1 ID-Selektor<br />1 Typselektor</div>
+
+        <div>#content *:not(nav) li {...}</div>
+        <div>0</div>
+        <div>1</div>
+        <div>0</div>
+        <div>2</div>
+        <div>0,1,0,2</div>
+        <div>
+          1 ID-Selektor<br />1 Universalselktor<br />2 Typselektor<br />1
+          Pseudoklasse (:not() wird nicht gewertet)
+        </div>
+
+        <div>ul#nav li.hyper a {...}</div>
+        <div>0</div>
+        <div>1</div>
+        <div>1</div>
+        <div>3</div>
+        <div>0,1,1,3</div>
+        <div>3 Typselektor<br />1 Klassenselektor<br />ID-Selektor<br /></div>
+
+        <div>&lta style=""> {...}</div>
+        <div>1</div>
+        <div>0</div>
+        <div>0</div>
+        <div>0</div>
+        <div>1,0,0,0</div>
+        <div>1 Inline Style</div>
+      </div>
+    </main>
+  </body>
+</html>
